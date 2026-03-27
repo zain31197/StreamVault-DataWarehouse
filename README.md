@@ -81,7 +81,7 @@ This project implements a fully working prototype of that infrastructure:
 
 The data warehouse is modeled as a classic **Star Schema** — optimized for read-heavy OLAP workloads. One central fact table is surrounded by five denormalized dimension tables.
 
-![Star Schema Diagram](star.png)
+![Star Schema Diagram](real_star.jpeg)
 
 ### Fact Table — `fact_sales`
 
