@@ -351,17 +351,6 @@ streamvault-dw/
 
 ---
 
-## 🎓 Academic Context
-
-| Field | Detail |
-|---|---|
-| **Institution** | Bachelor of Science in Data Science |
-| **Course** | DS3003 / DS3004 — Data Warehousing & Business Intelligence |
-| **Semester** | Fall 2025 |
-| **Student** | Zain Shahid — DS-5A — 23i2582 |
-| **Weight** | 15% of final grade |
-
----
 
 <div align="center">
 
