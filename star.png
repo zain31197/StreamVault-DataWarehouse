@@ -1,0 +1,197 @@
+<svg width="100%" viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: 'Segoe UI', Arial, sans-serif; }
+      .title { font-size: 13px; font-weight: 600; fill: #1a1a2e; }
+      .field { font-size: 11px; fill: #2d3748; }
+      .field-pk { font-size: 11px; fill: #7c3aed; font-weight: 600; }
+      .field-fk { font-size: 11px; fill: #0369a1; font-weight: 600; }
+      .fact-fact { font-size: 11px; fill: #059669; font-weight: 600; }
+      .tbl-header-fact { fill: #1e1b4b; }
+      .tbl-header-dim { fill: #0c4a6e; }
+      .tbl-body-fact { fill: #f5f3ff; }
+      .tbl-body-dim { fill: #f0f9ff; }
+      .tbl-border-fact { fill: none; stroke: #7c3aed; stroke-width: 1.5; }
+      .tbl-border-dim { fill: none; stroke: #0369a1; stroke-width: 1.5; }
+      .header-text { font-size: 12px; font-weight: 700; fill: #ffffff; }
+      .connector { stroke: #64748b; stroke-width: 1.5; fill: none; }
+      .badge-pk { fill: #7c3aed; }
+      .badge-fk { fill: #0369a1; }
+      .badge-fact { fill: #059669; }
+      .badge-text { font-size: 9px; fill: white; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="620" fill="#f8fafc" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" style="font-size:16px;font-weight:700;fill:#1e1b4b;font-family:'Segoe UI',Arial,sans-serif;">Walmart DWH — Star Schema</text>
+
+  <!-- ════════════════════ FACT TABLE (center) ════════════════════ -->
+  <!-- Header -->
+  <rect x="310" y="50" width="280" height="28" rx="6" class="tbl-header-fact"/>
+  <!-- Body rows alternating -->
+  <rect x="310" y="78" width="280" height="18" fill="#ede9fe"/>
+  <rect x="310" y="96" width="280" height="18" fill="#f5f3ff"/>
+  <rect x="310" y="114" width="280" height="18" fill="#ede9fe"/>
+  <rect x="310" y="132" width="280" height="18" fill="#f5f3ff"/>
+  <rect x="310" y="150" width="280" height="18" fill="#ede9fe"/>
+  <rect x="310" y="168" width="280" height="18" fill="#f5f3ff"/>
+  <rect x="310" y="186" width="280" height="18" fill="#ede9fe"/>
+  <rect x="310" y="204" width="280" height="18" fill="#f5f3ff"/>
+  <rect x="310" y="222" width="280" height="18" fill="#ede9fe"/>
+  <!-- Border -->
+  <rect x="310" y="50" width="280" height="190" rx="6" class="tbl-border-fact"/>
+  <!-- Divider line after header -->
+  <line x1="310" y1="78" x2="590" y2="78" stroke="#7c3aed" stroke-width="1"/>
+
+  <text x="450" y="68" text-anchor="middle" class="header-text">⭐ fact_sales</text>
+
+  <!-- Fields -->
+  <!-- SalesID PK -->
+  <rect x="316" y="81" width="22" height="12" rx="2" class="badge-pk"/><text x="327" y="91" text-anchor="middle" class="badge-text">PK</text>
+  <text x="343" y="91" class="field-pk">SalesID (INT)</text>
+
+  <!-- OrderID FK -->
+  <rect x="316" y="99" width="22" height="12" rx="2" class="badge-fk"/><text x="327" y="109" text-anchor="middle" class="badge-text">FK</text>
+  <text x="343" y="109" class="field-fk">OrderID (VARCHAR)</text>
+
+  <!-- CustomerID FK -->
+  <rect x="316" y="117" width="22" height="12" rx="2" class="badge-fk"/><text x="327" y="127" text-anchor="middle" class="badge-text">FK</text>
+  <text x="343" y="127" class="field-fk">CustomerID (VARCHAR)</text>
+
+  <!-- ProductID FK -->
+  <rect x="316" y="135" width="22" height="12" rx="2" class="badge-fk"/><text x="327" y="145" text-anchor="middle" class="badge-text">FK</text>
+  <text x="343" y="145" class="field-fk">ProductID (VARCHAR)</text>
+
+  <!-- StoreID FK -->
+  <rect x="316" y="153" width="22" height="12" rx="2" class="badge-fk"/><text x="327" y="163" text-anchor="middle" class="badge-text">FK</text>
+  <text x="343" y="163" class="field-fk">StoreID (VARCHAR)</text>
+
+  <!-- SupplierID FK -->
+  <rect x="316" y="171" width="22" height="12" rx="2" class="badge-fk"/><text x="327" y="181" text-anchor="middle" class="badge-text">FK</text>
+  <text x="343" y="181" class="field-fk">SupplierID (VARCHAR)</text>
+
+  <!-- DateKey FK -->
+  <rect x="316" y="189" width="22" height="12" rx="2" class="badge-fk"/><text x="327" y="199" text-anchor="middle" class="badge-text">FK</text>
+  <text x="343" y="199" class="field-fk">DateKey (DATE)</text>
+
+  <!-- Quantity FACT -->
+  <rect x="316" y="207" width="28" height="12" rx="2" class="badge-fact"/><text x="330" y="217" text-anchor="middle" class="badge-text">FCT</text>
+  <text x="349" y="217" class="fact-fact">Quantity (INT)</text>
+
+  <!-- TotalAmount FACT -->
+  <rect x="316" y="225" width="28" height="12" rx="2" class="badge-fact"/><text x="330" y="235" text-anchor="middle" class="badge-text">FCT</text>
+  <text x="349" y="235" class="fact-fact">TotalAmount (FLOAT)</text>
+
+
+  <!-- ════════════════════ DIM CUSTOMER (top-left) ════════════════════ -->
+  <rect x="30" y="50" width="220" height="28" rx="6" class="tbl-header-dim"/>
+  <rect x="30" y="78" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="30" y="96" width="220" height="18" fill="#f0f9ff"/>
+  <rect x="30" y="114" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="30" y="132" width="220" height="18" fill="#f0f9ff"/>
+  <rect x="30" y="150" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="30" y="168" width="220" height="18" fill="#f0f9ff"/>
+  <rect x="30" y="186" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="30" y="78" width="220" height="126" rx="0" fill="none"/>
+  <rect x="30" y="50" width="220" height="154" rx="6" class="tbl-border-dim"/>
+  <line x1="30" y1="78" x2="250" y2="78" stroke="#0369a1" stroke-width="1"/>
+  <text x="140" y="68" text-anchor="middle" class="header-text">dim_customer</text>
+  <rect x="36" y="81" width="22" height="12" rx="2" class="badge-pk"/><text x="47" y="91" text-anchor="middle" class="badge-text">PK</text>
+  <text x="63" y="91" class="field-pk">CustomerID</text>
+  <text x="36" y="109" class="field">Gender (CHAR)</text>
+  <text x="36" y="127" class="field">Age (VARCHAR)</text>
+  <text x="36" y="145" class="field">Occupation (VARCHAR)</text>
+  <text x="36" y="163" class="field">City_Category (VARCHAR)</text>
+  <text x="36" y="181" class="field">StayInCurrentCityYears</text>
+  <text x="36" y="199" class="field">MaritalStatus (INT)</text>
+
+  <!-- ════════════════════ DIM PRODUCT (top-right) ════════════════════ -->
+  <rect x="650" y="50" width="220" height="28" rx="6" class="tbl-header-dim"/>
+  <rect x="650" y="78" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="650" y="96" width="220" height="18" fill="#f0f9ff"/>
+  <rect x="650" y="114" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="650" y="78" width="220" height="54" rx="0" fill="none"/>
+  <rect x="650" y="50" width="220" height="82" rx="6" class="tbl-border-dim"/>
+  <line x1="650" y1="78" x2="870" y2="78" stroke="#0369a1" stroke-width="1"/>
+  <text x="760" y="68" text-anchor="middle" class="header-text">dim_product</text>
+  <rect x="656" y="81" width="22" height="12" rx="2" class="badge-pk"/><text x="667" y="91" text-anchor="middle" class="badge-text">PK</text>
+  <text x="683" y="91" class="field-pk">ProductID</text>
+  <text x="656" y="109" class="field">ProductCategory (VARCHAR)</text>
+  <text x="656" y="127" class="field">Price (FLOAT)</text>
+
+  <!-- ════════════════════ DIM TIME (bottom-center) ════════════════════ -->
+  <rect x="310" y="430" width="280" height="28" rx="6" class="tbl-header-dim"/>
+  <rect x="310" y="458" width="280" height="18" fill="#e0f2fe"/>
+  <rect x="310" y="476" width="280" height="18" fill="#f0f9ff"/>
+  <rect x="310" y="494" width="280" height="18" fill="#e0f2fe"/>
+  <rect x="310" y="512" width="280" height="18" fill="#f0f9ff"/>
+  <rect x="310" y="530" width="280" height="18" fill="#e0f2fe"/>
+  <rect x="310" y="458" width="280" height="90" rx="0" fill="none"/>
+  <rect x="310" y="430" width="280" height="118" rx="6" class="tbl-border-dim"/>
+  <line x1="310" y1="458" x2="590" y2="458" stroke="#0369a1" stroke-width="1"/>
+  <text x="450" y="448" text-anchor="middle" class="header-text">dim_time</text>
+  <rect x="316" y="461" width="22" height="12" rx="2" class="badge-pk"/><text x="327" y="471" text-anchor="middle" class="badge-text">PK</text>
+  <text x="343" y="471" class="field-pk">DateKey (DATE)</text>
+  <text x="316" y="489" class="field">DayOfWeek (VARCHAR)</text>
+  <text x="316" y="507" class="field">Month (VARCHAR)</text>
+  <text x="316" y="525" class="field">Quarter (VARCHAR)</text>
+  <text x="316" y="543" class="field">Year (INT)</text>
+
+  <!-- ════════════════════ DIM STORE (bottom-left) ════════════════════ -->
+  <rect x="30" y="430" width="220" height="28" rx="6" class="tbl-header-dim"/>
+  <rect x="30" y="458" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="30" y="476" width="220" height="18" fill="#f0f9ff"/>
+  <rect x="30" y="458" width="220" height="36" rx="0" fill="none"/>
+  <rect x="30" y="430" width="220" height="64" rx="6" class="tbl-border-dim"/>
+  <line x1="30" y1="458" x2="250" y2="458" stroke="#0369a1" stroke-width="1"/>
+  <text x="140" y="448" text-anchor="middle" class="header-text">dim_store</text>
+  <rect x="36" y="461" width="22" height="12" rx="2" class="badge-pk"/><text x="47" y="471" text-anchor="middle" class="badge-text">PK</text>
+  <text x="63" y="471" class="field-pk">StoreID</text>
+  <text x="36" y="489" class="field">StoreName (VARCHAR)</text>
+
+  <!-- ════════════════════ DIM SUPPLIER (bottom-right) ════════════════════ -->
+  <rect x="650" y="430" width="220" height="28" rx="6" class="tbl-header-dim"/>
+  <rect x="650" y="458" width="220" height="18" fill="#e0f2fe"/>
+  <rect x="650" y="476" width="220" height="18" fill="#f0f9ff"/>
+  <rect x="650" y="458" width="220" height="36" rx="0" fill="none"/>
+  <rect x="650" y="430" width="220" height="64" rx="6" class="tbl-border-dim"/>
+  <line x1="650" y1="458" x2="870" y2="458" stroke="#0369a1" stroke-width="1"/>
+  <text x="760" y="448" text-anchor="middle" class="header-text">dim_supplier</text>
+  <rect x="656" y="461" width="22" height="12" rx="2" class="badge-pk"/><text x="667" y="471" text-anchor="middle" class="badge-text">PK</text>
+  <text x="683" y="471" class="field-pk">SupplierID</text>
+  <text x="656" y="489" class="field">SupplierName (VARCHAR)</text>
+
+  <!-- ════════════════════ CONNECTORS ════════════════════ -->
+  <!-- dim_customer → fact_sales (CustomerID) -->
+  <path d="M250 127 L310 127" class="connector" marker-end="url(#arrow)" stroke="#7c3aed"/>
+
+  <!-- dim_product → fact_sales (ProductID) -->
+  <path d="M650 91 L590 145" class="connector" marker-end="url(#arrow)" stroke="#7c3aed"/>
+
+  <!-- dim_store → fact_sales (StoreID) -->
+  <path d="M250 462 L310 337 L310 163" class="connector" marker-end="url(#arrow)" stroke="#7c3aed"/>
+
+  <!-- dim_supplier → fact_sales (SupplierID) -->
+  <path d="M650 462 L590 337 L590 181" class="connector" marker-end="url(#arrow)" stroke="#7c3aed"/>
+
+  <!-- dim_time → fact_sales (DateKey) -->
+  <path d="M450 430 L450 240" class="connector" marker-end="url(#arrow)" stroke="#7c3aed"/>
+
+  <!-- ════════════════════ LEGEND ════════════════════ -->
+  <rect x="30" y="550" width="840" height="52" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="46" y="562" width="22" height="14" rx="3" class="badge-pk"/><text x="73" y="573" class="field-pk">PK — Primary Key</text>
+  <rect x="196" y="562" width="22" height="14" rx="3" class="badge-fk"/><text x="223" y="573" class="field-fk">FK — Foreign Key</text>
+  <rect x="346" y="562" width="28" height="14" rx="3" class="badge-fact"/><text x="379" y="573" class="fact-fact">FCT — Measure / Fact</text>
+  <rect x="46" y="582" width="14" height="3" rx="1" fill="#7c3aed"/>
+  <text x="66" y="591" class="field" style="font-size:10px;">Connector = FK relationship (dim → fact_sales)</text>
+  <rect x="346" y="580" width="14" height="10" rx="2" fill="#1e1b4b"/>
+  <text x="366" y="591" class="field" style="font-size:10px;fill:#1e1b4b;font-weight:600;">Dark header = Fact table</text>
+  <rect x="546" y="580" width="14" height="10" rx="2" fill="#0c4a6e"/>
+  <text x="566" y="591" class="field" style="font-size:10px;fill:#0c4a6e;font-weight:600;">Blue header = Dimension table</text>
+</svg>
